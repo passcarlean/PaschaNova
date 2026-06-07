@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(150%) skewX(-20deg);
+  }
+}
+
+@keyframes float-sparkle {
+  0%, 100% {
+    transform: translateY(0) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-14px) scale(1.1) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+@keyframes celebrate-badge {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    transform: scale(1.45) rotate(15deg);
+  }
+  40% {
+    transform: scale(1.05) rotate(-15deg);
+  }
+  60% {
+    transform: scale(1.18) rotate(10deg);
+  }
+  80% {
+    transform: scale(0.96) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes particle-fade-out {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0) scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(1.4);
+    opacity: 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-sparkle-twinkle {
+  animation: float-sparkle 2s ease-in-out infinite;
+}
+
+.animate-celebrate {
+  animation: celebrate-badge 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-particle-burst {
+  animation: particle-fade-out 0.95s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+

@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Representation of a user's account details and roles.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Unique user credentials identifier from Firebase Auth."
+        },
+        "email": {
+          "type": "string",
+          "description": "Active email address of the account."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User custom chosen display moniker."
+        },
+        "role": {
+          "type": "string",
+          "enum": ["student", "maker", "admin"],
+          "description": "RBAC structural security group of the user."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp identifying initialization moment."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp identifying last info modifications."
+        }
+      },
+      "required": ["userId", "email", "displayName", "role", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Unique key-value profiles storing credentials data."
+    }
+  }
+}

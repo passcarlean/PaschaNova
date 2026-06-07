@@ -1,0 +1,6 @@
+{
+  "name": "PaschaNova Labs",
+  "description": "A fun, colorful, beginner-friendly STEM maker space for drag-and-drop coding, electronics circuit building, robotics simulation, IoT and AI learning.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
